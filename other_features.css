@@ -1,0 +1,198 @@
+/* Snackbar at the bottom */
+
+.snackbar {
+    /* width: 150px; */
+    padding: 12px 18px;
+    position: fixed;
+    bottom: 30px;
+    z-index: 1;
+    right: 30px;
+    /* border: 1px solid red; */
+    background-color: rgba(255, 0, 38, 0.875);
+    border-radius: 2px;
+    box-shadow: 0 0 10px 1px #555;
+    /* visibility: hidden; */
+    display: none;
+    animation: fadein 0.5s, fadeout 0.5s 3s;
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+.snackbar p {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: .95rem;
+}
+
+.snackbar p span {
+    font-size: 1.2rem;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+
+/* Modal boxes for confirmations */
+
+.modal_boxes {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.modal_boxes .modal_delNote,
+.modal_delAllNotes {
+    padding: 60px 10px;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    overflow: hidden;
+    /* background-color: rgb(235, 235, 235); */
+    background-color: white;
+    position: relative;
+    animation: popupModal .1s;
+}
+
+@keyframes popupModal {
+    from {
+        width: 0;
+        height: 0;
+    }
+    to {
+        width: 80vw;
+        height: auto;
+    }
+}
+
+.modal_boxes .modal_delNote span,
+.modal_delAllNotes span {
+    padding: 0;
+    font-size: 3rem;
+    /* color: white; */
+    cursor: pointer;
+    position: absolute;
+    right: 4%;
+    top: 0;
+    /* animation: popupModal .3s; */
+    /* opacity: .8; */
+    /* text-shadow: 10px 10px rgba(0, 0, 0, 0.3); */
+    /* text-shadow: 5px 2px  ; */
+}
+
+.modal_boxes .modal_delNote span:hover,
+.modal_delAllNotes span:hover {
+    /* opacity: 1; */
+    animation: roundCross .8s;
+}
+
+@keyframes roundCross {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(90deg);
+    }
+    75% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes hoverOut {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-90deg);
+    }
+    50% {
+        transform: rotate(-90deg);
+    }
+    75% {
+        transform: rotate(-90deg);
+    }
+    100% {
+        transform: rotate(-90deg);
+    }
+}
+
+.modal_boxes .modal_delNote p,
+.modal_delAllNotes p {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 20px;
+    animation: popupModal .1s;
+}
+
+.modal_delNote_btns,
+.modal_delAllNotes_btns {
+    width: 100%;
+    /* margin: auto; */
+    text-align: center;
+    animation: popupModal .1s;
+}
+
+.modal_boxes .modal_delNote .modal_delNote_btns .modal_delNote_btn,
+.modal_delAllNotes .modal_delAllNotes_btns .modal_delAllNotes_btn {
+    padding: 10px 15px;
+    width: 40%;
+    margin: 0 10px;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: .9;
+}
+
+.modal_boxes .modal_delNote .modal_delNote_btns .modal_delNote_btn:hover,
+.modal_delAllNotes .modal_delAllNotes_btns .modal_delAllNotes_btn:hover {
+    opacity: 1;
+}
+
+#N_delNote_btn,
+#N_delAllNotes_btn {
+    background-color: #bbb;
+}
+
+#Y_delNote_btn,
+#Y_delAllNotes_btn {
+    background-color: red;
+    color: white
+}
