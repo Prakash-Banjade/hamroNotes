@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamro Notes</title>
+    <title>Hamro Notes - Prakash Banjade</title>
     <link rel="icon" href="logo.png">
     <meta name="description" content="Hamro Notes is an online notes creating website that create notes and save it into the local storage of your browser. You can create, delete and search for your notes. This website is still under developnment and requrires some more improvements
     like the feature of adding titles, editing the notes etc.">
@@ -26,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
-    <script src="main.js" type="text/javascript"></script>
+    <script defer src="js/main.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -72,7 +72,7 @@
             </div>
 
             <div class="snackbar" id="snackbar">
-                <p>Enter some text <span id="cross">&times;</span></p>
+                <p>Don't leave title or text empty <span id="cross">&times;</span></p>
             </div>
 
 
@@ -84,6 +84,16 @@
                     <p>This is my note</p>
                     <button id="del_note" class="del_note">Delete note</button>
                 </div> -->
+
+                <div class="note" id="note">
+
+                    <details id="my_note1" class="my_note1">
+                        <summary id="note_head" class="note_head">My note1</summary>
+                        <p id="saved_note" class="saved_note">This is lorem333 first note</p>
+                        <button id="del_note" class="del_note">Delete note</button>
+
+                    </details>
+                </div>
             </div>
 
         </div>
@@ -155,7 +165,7 @@
         </div>
     </footer>
 
-    
+
     <script src="https://kit.fontawesome.com/e5dc0c1e60.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
@@ -165,9 +175,3 @@
 </body>
 
 </html>
-<!-- <details id="my_note1" class="my_note1">
-                        <summary id="note_head" class="note_head">My note1</summary>
-                        <p id="saved_note" class="saved_note">This is lorem333 first note</p>
-                        <button id="del_note" class="del_note">Delete note</button>
-
-                    </details> -->

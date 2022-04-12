@@ -4,7 +4,9 @@
     /* width: 150px; */
     padding: 12px 18px;
     position: fixed;
-    bottom: 30px;
+    /* bottom: 30px; */
+    top: 100px;
+    right: 40px;
     z-index: 1;
     right: 30px;
     /* border: 1px solid red; */
@@ -13,27 +15,39 @@
     box-shadow: 0 0 10px 1px #555;
     /* visibility: hidden; */
     display: none;
-    animation: fadein 0.5s, fadeout 0.5s 3s;
+    animation: fadein 0.2s, fadeout 0.2s 3s;
 }
 
 @keyframes fadein {
-    from {
-        bottom: 0;
+    0% {
+        right: 0;
         opacity: 0;
     }
-    to {
-        bottom: 30px;
+    20% {
+        right: 50px;
+        opacity: 1;
+    }
+    50% {
+        right: 60px;
+        opacity: 1;
+    }
+    75% {
+        right: 65px;
+        opacity: 1;
+    }
+    100% {
+        right: 40px;
         opacity: 1;
     }
 }
 
 @keyframes fadeout {
     from {
-        bottom: 30px;
+        right: 40px;
         opacity: 1;
     }
     to {
-        bottom: 0;
+        right: 0;
         opacity: 0;
     }
 }
