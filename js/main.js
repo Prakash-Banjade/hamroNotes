@@ -64,11 +64,7 @@ function showNotes() {
     let html = "";
     myNotesObj_body.forEach(function(element, index) {
         let title = JSON.parse(localStorage.notes_title);
-        //     html += `<div class="note"    data-aos="fade-up"   data-aos-offset="80">
-        //     <h2>${title[index]}</h2>
-        //     <p>${element}</p>
-        //     <button id="${index}" class="del_note" onclick="delNote(this.id)">Delete</button>
-        // </div>`
+
         html += ` <div class="note" data-aos="fade-up"   data-aos-offset="80">
 
         <details id="my_note1" class="my_note1">
