@@ -43,14 +43,14 @@ add_note.addEventListener('click', function(e) {
         snackbar.style.display = 'block';
         setTimeout(() => {
             snackbar.style.display = 'none';
-        }, 3150);
+        }, 3200);
     }
     showNotes();
 })
 
 function showNotes() {
-    let myNotesObj_title;
     let myNotesObj_body;
+    let myNotesObj_title;
     let notes = localStorage.getItem('notes');
     let notes_title = localStorage.getItem('notes_title');
     if (notes == null && notes_title == null) {
@@ -64,13 +64,16 @@ function showNotes() {
     let html = "";
     myNotesObj_body.forEach(function(element, index) {
         let title = JSON.parse(localStorage.notes_title);
-
+        let monthsArr = ['January', 'February', 'March', 'April', 'June', 'July', 'August', 'September', 'Ocotober', 'November', 'December'];
         html += ` <div class="note" data-aos="fade-up"   data-aos-offset="80">
 
         <details id="my_note1" class="my_note1">
             <summary id="note_head" class="note_head">${title[index]}</summary>
             <p id="saved_note" class="saved_note">${element}</p>
             <button id="${index}" class="del_note" onclick="delNote(this.id)">Delete</button>
+            <button class="edit_note ${index}">Edit</button>
+            <p class="created_time" id="created_time">Created on : ${monthsArr[new Date().getMonth()]} ${new Date().getDate()} </p>
+
 
         </details>
     </div>`
@@ -128,8 +131,28 @@ yDel.addEventListener('click', function() {
     localStorage.setItem('notes', JSON.stringify(myNotesObj_body));
     modal_boxes.style.display = "none";
     modal_delNote.style.display = "none";
+
     showNotes();
 })
+
+// When note is edited || clicked on edit
+const edit_btn = document.querySelectorAll('.edit_note');
+
+for (item of edit_btn) {
+
+    item.addEventListener('click', (e) => {
+        let note_title = e.target.parentNode.children[0].innerText;
+        let note_body = e.target.parentNode.children[1].innerText
+        note_title_input.value = note_title;
+        note_body_input.value = note_body;
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        document.getElementById('notes_writing_area').style.animation = 'glow .8s';
+
+    })
+}
+
+
 
 
 // When note is searched
@@ -208,4 +231,6 @@ Y_delAllNotes_btn.addEventListener('click', function() {
     document.getElementById('notes_container').innerHTML = `<p style = "font-family: 'Poppins', sans-serif; color: #888;"> Nothing to show here! Click "Add note" to create a note.</p>`
     modal_boxes.style.display = "none";
     modal_delAllNotes.style.display = "none";
+    note_title_input.value = "";
+    note_body_input.value = "";
 })

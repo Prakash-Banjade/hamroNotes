@@ -15,7 +15,7 @@
     box-shadow: 0 0 10px 1px #555;
     /* visibility: hidden; */
     display: none;
-    animation: fadein 0.2s, fadeout 0.2s 3s;
+    animation: fadein .2s, fadeout 0.2s 3s;
 }
 
 @keyframes fadein {
@@ -23,27 +23,27 @@
         right: 0;
         opacity: 0;
     }
-    20% {
-        right: 50px;
-        opacity: 1;
-    }
-    50% {
+    25% {
         right: 60px;
         opacity: 1;
     }
+    50% {
+        right: 75px;
+        opacity: 1;
+    }
     75% {
-        right: 65px;
+        right: 40px;
         opacity: 1;
     }
     100% {
-        right: 40px;
+        right: 20px;
         opacity: 1;
     }
 }
 
 @keyframes fadeout {
     from {
-        right: 40px;
+        right: 70px;
         opacity: 1;
     }
     to {

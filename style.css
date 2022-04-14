@@ -142,6 +142,36 @@
         outline: none;
     }
     
+    #notes_writing_area {
+        /* animation: glow .8s .5s; */
+    }
+    
+    @keyframes glow {
+        0% {
+            border: 1px solid #888;
+        }
+        30% {
+            border: none;
+            box-shadow: 0 0 5px .1px rgba(0, 255, 195, .9);
+        }
+        50% {
+            border: none;
+            box-shadow: 0 0 6px .3px rgba(0, 255, 195, .5);
+        }
+        75% {
+            border: none;
+            box-shadow: 0 0 7px .5px rgba(0, 255, 195. .4);
+        }
+        80% {
+            border: none;
+            box-shadow: 0 0 5px .1px rgba(0, 255, 195, .7);
+        }
+        100% {
+            border: 1px solid #888;
+            /* box-shadow: 0 0 5px .1px rgb(0, 255, 195); */
+        }
+    }
+    
     .content textarea {
         resize: none;
         height: 150px;
@@ -266,17 +296,19 @@
         font-size: 1.2rem;
     }
     
-    .content .notes_container .note .del_note {
-        margin-top: 8px;
-        /* height: 2rem;
-        width: 6rem; */
-        font-family: 'Poppins', sans-serif;
+    .content .notes_container .note .edit_note {
+        padding: 5px 15px;
+        background-color: rgb(5, 255, 109);
+        color: #000;
+    }
+    
+    .content .notes_container .note p.created_time {
+        position: absolute;
+        color: grey;
+        right: 10px;
+        bottom: 10px;
+        font-style: italic;
         font-size: .9rem;
-        background-color: rgb(255, 38, 0);
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
     }
     /* footer {
         position: absolute;
@@ -400,11 +432,14 @@
     }
     
     @media screen and (max-width: 830px) {
+        .content {
+            width: 80vw;
+        }
+        .content .notes_container .note {
+            width: 100%;
+        }
         nav {
             gap: 23vw;
-        }
-        .content {
-            width: 55vw;
         }
         html {
             font-size: 13px;
@@ -417,9 +452,6 @@
         }
         nav {
             gap: 15vw;
-        }
-        .content {
-            width: 60vw;
         }
     }
     
@@ -434,12 +466,6 @@
         /* #logo_links ul {
         display: none;
     } */
-        .content {
-            width: 65vw;
-        }
-        .content .notes_container .note {
-            width: 100%;
-        }
         #srch {
             margin-right: 0;
         }
@@ -452,9 +478,6 @@
     }
     
     @media screen and (max-width: 400px) {
-        .content {
-            width: 75vw;
-        }
         html {
             font-size: 9px;
         }
@@ -462,7 +485,7 @@
     
     @media screen and (max-width: 350px) {
         .content {
-            width: 84vw;
+            width: 90vw;
         }
         html {
             font-size: 8px;
