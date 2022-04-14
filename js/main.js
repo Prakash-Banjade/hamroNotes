@@ -149,8 +149,80 @@ for (item of edit_btn) {
         document.documentElement.scrollTop = 0;
         document.getElementById('notes_writing_area').style.animation = 'glow .8s';
 
+        document.getElementById('buttons').children[0].style.display = "none";
+        document.getElementById('buttons').children[1].style.display = "none";
+        document.getElementById('buttons').children[2].style.display = "none";
+        document.getElementById('buttons').children[3].style.display = "inline-block";
+        document.getElementById('buttons').children[4].style.display = "inline-block";
+
+        window.saveInd = e.target.parentNode.children[2].id;
+
+
+
+
+
+
     })
 }
+
+// When clicked on save button || Save note
+
+document.getElementById('saveNote').addEventListener('click', (e) => {
+    let myNotesObj_title;
+    let myNotesObj_body;
+    let notes = localStorage.getItem('notes');
+    let notes_title = localStorage.getItem('notes_title');
+    if (notes == null && notes_title == null) {
+        myNotesObj_title = [];
+        myNotesObj_body = [];
+    } else {
+        myNotesObj_title = JSON.parse(notes_title);
+        myNotesObj_body = JSON.parse(notes);
+
+    }
+    if (note_body_input.value.length != 0 && note_title_input.value.length != 0) {
+        myNotesObj_title.splice(window.saveInd, 1);
+        myNotesObj_body.splice(window.saveInd, 1);
+        myNotesObj_title.push(note_title_input.value);
+        myNotesObj_body.push(note_body_input.value);
+        localStorage.setItem('notes', JSON.stringify(myNotesObj_body));
+        localStorage.setItem('notes_title', JSON.stringify(myNotesObj_title));
+        note_title_input.value = "";
+        note_body_input.value = "";
+
+
+        document.getElementById('buttons').children[0].style.display = "inline-block";
+        document.getElementById('buttons').children[1].style.display = "inline-block";
+        document.getElementById('buttons').children[2].style.display = "inline-block";
+        document.getElementById('buttons').children[3].style.display = "none";
+        document.getElementById('buttons').children[4].style.display = "none";
+    } else {
+        snackbar.style.display = 'block';
+        setTimeout(() => {
+            snackbar.style.display = 'none';
+        }, 3200);
+    }
+    showNotes();
+
+
+
+
+
+})
+
+// When clicked on cancel button || Cancel to save the note
+
+document.getElementById('cancelSave').addEventListener('click', (e) => {
+    document.getElementById('buttons').children[0].style.display = "inline-block";
+    document.getElementById('buttons').children[1].style.display = "inline-block";
+    document.getElementById('buttons').children[2].style.display = "inline-block";
+    document.getElementById('buttons').children[3].style.display = "none";
+    document.getElementById('buttons').children[4].style.display = "none";
+
+    note_body_input.value = "";
+    note_title_input.value = "";
+})
+
 
 
 

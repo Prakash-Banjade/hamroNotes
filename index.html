@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamro Notes - Prakash Banjade</title>
     <link rel="icon" href="logo.png">
-    <meta name="description" content="Hamro Notes is an online notes creating website that create notes and save it into the local storage of your browser. You can create, delete and search for your notes. This website is still under developnment and requrires some more improvements
-    like the feature of adding titles, editing the notes etc.">
+    <meta name="description" content="Hamro Notes is an online notes creating website that create notes and save it into the local storage of your browser. You can create, delete, edit and search for your notes. This website is still under developnment and requrires some more improvements
+    like the feature of marking note as important, sorting the note etc.">
     <meta name="keywords" content="Banjade Fmaily, Banjade, Prakash, Prakash Banjde, Notes, magic notes, hamro notes, hamro, prakash notes, notes, hamro notes, hamro, hamro patro, patro, notes, notes hamro, Dorna Banjade, Dorna, Juna, Juna Banjade, Gitika, Gitika Banjade, Family, Home help in shivraj, Prakash Banjade">
     <meta name="author" content="Prakash Banjade">
 
@@ -56,7 +56,7 @@
                 <input type="text" id="note_title" placeholder="Title...">
                 <textarea name="enter_notes" id="note_body"></textarea>
             </div>
-            <div class="buttons">
+            <div class="buttons" id="buttons">
                 <button id="add_note" class="btns">
                     Add note
                 </button>
@@ -66,6 +66,11 @@
                 <button id="delAllNotes" class="btns">
                     Delete all notes
                 </button>
+                <button id="saveNote" class="btns" style="display: none;">
+                    Save
+                </button>
+                <button id="cancelSave" class="btns" style="display: none; background-color: red;">
+                    Cancel
             </div>
             <div class="hr_line">
                 <h1>My Notes</h1>
@@ -115,9 +120,8 @@
         <div class="lower_footer">
             <div class="aboutUs">
                 <h1>About Hamro Notes</h1>
-                <p>Hamro Notes is an online notes creating website that create notes and save it into the local storage of your browser. You can create, delete and search for your notes. This website is still under developnment and requrires some more improvements
-                    like the feature of editing the notes, highliting the searched text etc. <br><br><span style="color: #999"><strong>Last update contains</strong>: adding titles, empty notes can't be saved, confirmation before delete.</span><br><br>Updated
-                    on: 10th April</p>
+                <p>Hamro Notes is an online notes creating website that create notes and save it into the local storage of your browser. You can create, delete, edit and search for your notes. This website is still under developnment and requrires some more
+                    improvements like the feature of marking note as important, sorting the note etc. <br><br><span style="color: #999"><strong>Last update contains</strong>: notes can be edited</span><br><br>Updated on: 14th April</p>
             </div>
             <div class="contactUs">
                 <h1>Contact me</h1>
